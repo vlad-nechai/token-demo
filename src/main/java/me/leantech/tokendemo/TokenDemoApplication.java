@@ -1,5 +1,6 @@
 package me.leantech.tokendemo;
 
+import org.apache.commons.lang3.SystemUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

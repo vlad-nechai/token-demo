@@ -39,9 +39,9 @@
 		<dependency>
 			<groupId>org.stoken</groupId>
 			<artifactId>stoken-wrapper</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/stoken-wrapper.jar</systemPath>
+			<systemPath>${project.basedir}/src/main/resources/libs/stoken-wrapper.jar</systemPath>
 		</dependency>
 
 		<dependency>
