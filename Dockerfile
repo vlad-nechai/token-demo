@@ -1,5 +1,5 @@
 FROM bellsoft/liberica-openjdk-alpine:17.0.3.1-2
-RUN apk add curl stoken
+RUN apk add gcompat
 WORKDIR /
 VOLUME /tmp
 ADD ./target/service.jar service.jar

@@ -1,5 +1,6 @@
 package me.leantech.tokendemo;
 
+import me.leantech.tokendemo.util.NativeLibrariesUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,22 +13,8 @@ import java.nio.file.Files;
 
 @SpringBootApplication
 public class TokenDemoApplication {
-
     static {
-        try {
-            String libName = "libstoken-wrapper.dylib";
-            URL url = TokenDemoApplication.class.getResource("/libs/" + libName);
-            File tmpDir = Files.createTempDirectory("stoken").toFile();
-            tmpDir.deleteOnExit();
-            File nativeLibTmpFile = new File(tmpDir, libName);
-            nativeLibTmpFile.deleteOnExit();
-            try (InputStream in = url.openStream()) {
-                Files.copy(in, nativeLibTmpFile.toPath());
-            }
-            System.load(nativeLibTmpFile.getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        NativeLibrariesUtils.importDynamicLibraryFromResources("libstoken-wrapper");
     }
 
     public static void main(String[] args) {
