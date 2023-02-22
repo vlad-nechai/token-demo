@@ -1,5 +1,5 @@
 FROM bellsoft/liberica-openjdk-alpine:17.0.3.1-2
-RUN apk add gcompat
+RUN apk add nettle libxml2
 WORKDIR /
 VOLUME /tmp
 ADD ./target/service.jar service.jar
